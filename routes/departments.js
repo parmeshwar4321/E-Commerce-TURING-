@@ -1,32 +1,9 @@
 const router=require('express').Router()
-const knex=require('../database/turingdb')
+const {getdepartment,getdepartmentByID}=require('../controllers/departments')
 
-router.get('/departments',(req,res)=>{
+router.get('/departments',getdepartment)
 
-    knex.select('*')
-    .from ('department')
-    .then((data)=>{
-        console.log(data);
-        res.send(data)
-    })
-    .catch((er)=>{
-        console.log(er);
-    })
-})
-
-router.get('/departments/:id',(req,res)=>{
-    knex.select("*")
-    .from('department')
-    .where("department_id", req.params.id)
-    .then((data)=>{
-        console.log(data);
-        res.send(data)
-    })
-    .catch((er)=>{
-        console.log(er);
-    })
-    
-})
+router.get('/departments/:id',getdepartmentByID)
 
 
 

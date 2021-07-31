@@ -8,6 +8,7 @@ app.use(express.json())
 app.use('/',require('./routes/attributes'))
 app.use('/',require('./routes/departments'))
 app.use('/',require('./routes/tax'))
+app.use('/',require('./routes/shipping'))
 
 
 const Port=process.env.PORT||2021
