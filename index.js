@@ -9,7 +9,9 @@ app.use('/',require('./routes/attributes'))
 app.use('/',require('./routes/departments'))
 app.use('/',require('./routes/tax'))
 app.use('/',require('./routes/shipping'))
-
+app.use('/',require('./routes/category'))
+app.use('/',require('./routes/orders'))
+app.use('/',require('./routes/product'))
 
 const Port=process.env.PORT||2021
 app.listen(Port,()=>{

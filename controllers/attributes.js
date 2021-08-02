@@ -25,8 +25,8 @@ exports.getAttributesById = async (req, res) => {
         .catch((er) => {
             console.log(er);
         })
-
 }
+
 exports.getAttributesValueById = async (req, res) => {
     await knex.select("attribute_value_id","value")
         .from("attribute_value")
