@@ -189,7 +189,7 @@ exports.createPostReviews = async (req, res) => {
         // .where("product_id", req.params.id)
         .then(() => {
             knex("review").insert({
-                customer_id:1,
+                customer_id: 1,
                 product_id: req.body.product_id,
                 review: req.body.review,
                 rating: req.body.rating,

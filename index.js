@@ -13,6 +13,9 @@ app.use('/',require('./routes/category'))
 app.use('/',require('./routes/orders'))
 app.use('/',require('./routes/product'))
 app.use('/',require('./routes/customer'))
+app.use('/',require('./routes/shopping_cart'))
+app.use('/',require('./routes/stripe'))
+
 
 const Port=process.env.PORT||2021
 app.listen(Port,()=>{
