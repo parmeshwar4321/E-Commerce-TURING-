@@ -31,7 +31,7 @@ exports.getproductBySearch = async (req, res) => {
         .orWhere('product_id', 'like', `%${search}%`)
         .orWhere('price', 'like', `%${search}%`)
         .orWhere('discounted_price', 'like', `%${search}%`)
-    
+
         .then((data) => {
             // console.log(data);
             res.send(data)
@@ -145,9 +145,9 @@ exports.getproductsDetails = async (req, res) => {
 exports.getproductLocations = async (req, res) => {
     await knex.select(
         "category.category_id",
-        "category.name",
+        "category.name as category_name",
         'department.department_id',
-        'department.name',
+        'department.name as department_name',
 
     )
         .from('category')
@@ -182,4 +182,29 @@ exports.getproductReviewById = async (req, res) => {
         })
 }
 
+
+exports.createPostReviews = async (req, res) => {
+    await knex.select("*")
+        .from('customer')
+        // .where("product_id", req.params.id)
+        .then(() => {
+            knex("review").insert({
+                customer_id:1,
+                product_id: req.body.product_id,
+                review: req.body.review,
+                rating: req.body.rating,
+                created_on: new Date()
+            })
+                .then((data) => {
+                    console.log(data);
+                    res.send(data)
+                })
+                .catch((er) => {
+                    console.log(er);
+                })
+        })
+        .catch((er) => {
+            console.log(er);
+        })
+}
 
