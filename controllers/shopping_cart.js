@@ -266,7 +266,6 @@ exports.saveForLater = async (req, res) => {
     })
 }
 
-
 exports.getSaved = async (req, res) => {
 knex
 .select(
@@ -286,8 +285,6 @@ knex
     console.log(err);
 })
 }
-
-
 
 exports.removedProductbyId = async (req, res) => {
     knex.select("*")
