@@ -30,7 +30,6 @@ exports.customerSign = async (req, res) => {
         })
 }
 
-
 exports.customerLog = async (req, res) => {
     
     knex.select("*")
