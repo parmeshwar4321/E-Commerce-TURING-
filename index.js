@@ -17,7 +17,7 @@ app.use('/',require('./routes/shopping_cart'))
 app.use('/',require('./routes/stripe'))
 
 
-const Port=process.env.PORT||2021
+const Port=process.env.PORT||2050
 app.listen(Port,()=>{
     console.log(`SERVER IS RUNNING AT PORT ${Port}`);
 })
